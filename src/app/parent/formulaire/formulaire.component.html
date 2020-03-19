@@ -1,0 +1,45 @@
+<form [formGroup]="formInfo" (submit)="onSubmit()">
+    <div>
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+        <mat-error *ngIf="f.firstName.errors?.required">
+            First Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+            <mat-error *ngIf="f.lastName.errors?.required">
+                Last Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Age</mat-label>
+            <input matInput formControlName="age">
+            <mat-error *ngIf="f.age.errors?.required">
+                Age is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="f.age.errors?.pattern">
+                Age must be in numbers
+            </mat-error>
+          </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="f.email.errors?.required">
+                Email is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="f.email.errors?.email">
+                Enter a valid Email
+            </mat-error>
+          </mat-form-field>
+    </div>
+<button type="submit" class="btn btn-primary my-5">sub</button>
+</form>
