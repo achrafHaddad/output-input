@@ -13,10 +13,10 @@
             Email
         </th>
     </tr>
-    <tr>
-        <td>{{data?.firstName}}</td>
-        <td>{{data?.lastName}}</td>
-        <td>{{data?.age}}</td>
-        <td>{{data?.email}}</td>
+    <tr *ngFor="let dt of data">
+        <td>{{dt?.firstName}}</td>
+        <td>{{dt?.lastName}}</td>
+        <td>{{dt?.age}}</td>
+        <td>{{dt?.email}}</td>
     </tr>
 </table>
